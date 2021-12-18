@@ -19,9 +19,6 @@ html,body {
     --btn-primary-hover: #caa03e;
 }
 
-.cart {
-    display: none;
-}
 
 .leaf-right {
     position: absolute;
@@ -49,7 +46,6 @@ html,body {
 a, li {
     text-decoration: none !important;
     list-style: none !important;
-    color: black !important;
 }
 
 .ml-50 {
@@ -72,6 +68,7 @@ a, li {
     margin: 0 auto;
 }
 
+
 .primary-button {
     padding: 10px 0px;
     color: white;
@@ -90,6 +87,14 @@ a, li {
     width: 100%;
     position: fixed;
     z-index: 999;
+}
+
+.app-bar-pink > .app-left > a {
+    color: black;
+}
+
+.app-bar > .app-left > a {
+    color: black;
 }
 
 .shadow-bottom {
@@ -141,6 +146,10 @@ a, li {
 
 .cart {
     margin-right: 20px;
+}
+
+.menu {
+    display: none;
 }
 
 /* ini untuk header hero */
@@ -195,7 +204,6 @@ a, li {
 .testimonial-items {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .testi-left, .testi-right {
@@ -239,6 +247,10 @@ a, li {
     justify-content: center;
     align-items: center;
     background-color: var(--bg-secondary);
+}
+
+.footer-left > a {
+    color: black;
 }
 
 .footer-items {
@@ -293,8 +305,12 @@ a, li {
     color: #bebcbc;
   }
 
+.product-item {
+    margin-bottom: 60px;
+}
+
 .product-img {
-    max-width: 100%;
+    max-width: 80%;
 }
 
 .product-img:last-child {
@@ -306,6 +322,15 @@ a, li {
     text-align: center;
     padding: 20px 0px;
 }
+
+.text-wrapper > a {
+    text-align: center;
+}
+
+.text-wrapper > a:hover {
+    color: white;
+}
+
 
 .text-wrapper > p {
     margin: 0px !important;
@@ -353,6 +378,14 @@ a, li {
 .blog-content-wrapper p {
     font-size: 14px;
     margin: 30px 0px;
+}
+
+.blog-content-wrapper > a {
+    text-align: center;
+}
+
+.blog-content-wrapper > a:hover {
+    color: white;
 }
 
 .mobile {
@@ -421,12 +454,32 @@ a, li {
     margin-bottom: 10px;
 }
 
+.blog-detail {
+    margin: 30vh 0vh;
+}
+
+.blog-heading-img {
+    width: 100%;
+}
+
+.blog-heading-title {
+    padding: 40px;
+    margin: 40px 0px;
+}
+
+.blog-body > .sub-title {
+    margin-bottom: 30px;
+}
+
+.blog-body > p {
+    margin-bottom: 40px;
+}
 /* media screen untuk navbar */
 @media only screen and (max-width: 780px) {
     .leaf-right, .leaf-left {
         display: none;
     }
-    .cart {
+    .menu {
         display: block;
     }
     .app-left {
@@ -473,6 +526,10 @@ a, li {
 
     .testi-left > img, .testi-right > img {
         width: 40px;
+    }
+
+    .testimonial-items {
+        align-items: center;
     }
 
     .title {
@@ -561,5 +618,30 @@ a, li {
 
     .web {
         display: none;
+    }
+
+    .blog-detail {
+        margin: 20vh 0vh;
+        margin-bottom: 0;
+    }
+
+    .blog-heading-title {
+        padding: 0px;
+        margin-bottom: 0px;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    .blog-heading-img {
+        height: 300px;
+        object-fit: cover;
+    }
+    .blog-heading, .blog-body {
+        padding: 20px;
+    }
+
+    .blog-body > p {
+        text-align: justify;
+        text-align-last: left;
     }
 }

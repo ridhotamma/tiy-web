@@ -1,0 +1,565 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html,body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    max-width: 100%;
+}
+
+:root {
+    --bg-primary: #ECD5C6;
+    --bg-secondary: #C0D1D9;
+    --bg-gray: #F9F8F8;
+    --btn-primary: #FCC94E;
+    --btn-primary-hover: #caa03e;
+}
+
+.cart {
+    display: none;
+}
+
+.leaf-right {
+    position: absolute;
+    left: 84%;
+    top: 25%;
+    bottom: 0%; 
+    right: 0;
+}
+
+.leaf-left {
+    width: 600px;
+    position: absolute;
+    left: -28%;
+    top: 178%;
+    bottom: 0%;
+    right: 100%;
+}
+
+.leaf-right, .leaf-left {
+    display: inline;
+    z-index: -1;
+    overflow: hidden;
+}      
+
+a, li {
+    text-decoration: none !important;
+    list-style: none !important;
+    color: black !important;
+}
+
+.ml-50 {
+    margin-left: 150px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 50px;
+}
+
+.mt-40 {
+    margin-top: 100px;
+}
+
+.item-center {
+    margin: 0 auto;
+}
+
+.primary-button {
+    padding: 10px 0px;
+    color: white;
+    background-color: var(--btn-primary);
+    border: none;
+    border-radius: 5px;
+    width: 180px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ini untuk navbar */
+.app-bar {
+    padding: 20px 50px;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+
+.shadow-bottom {
+    box-shadow: 0px 30px 20px -20px rgba(0, 0, 0, 0.1);
+}
+
+.app-bar-pink {
+    padding: 20px 50px;
+    display: flex;
+    background-color: var(--bg-primary);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+
+.app-left, .app-middle, .app-right {
+    width: 100%;
+}
+
+.app-left {
+    display: flex;
+    align-items: center;
+}
+
+.app-left a {
+    margin-right: 45px;
+}
+
+.app-items {
+    display: flex;
+    align-items: center;
+}
+
+.app-item {
+    margin-right: 10px;
+}
+
+.app-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cart {
+    margin-right: 20px;
+}
+
+/* ini untuk header hero */
+.hero {
+    height: fit-content;
+    background-color: var(--bg-primary);
+}
+
+.hero .primary-button {
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
+
+.hero > .title {
+    padding: 60px 100px 30px 0px;
+    padding-left: 150px;
+    width: 50%;
+    color: white;
+}
+
+.title {
+    font-size: 45px;
+}
+
+.serum-img {
+    position: absolute;
+    max-width: 600px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+}
+
+
+.product {
+    box-shadow: 0px 30px 20px -20px rgba(0, 0, 0, 0.1);
+}
+
+.featured-product {
+    background-color: var(--bg-primary);
+    color: white;
+}
+
+.testimonial {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--btn-primary);
+}
+
+.testimonial-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testi-left, .testi-right {
+    padding: 20px 100px;
+}
+
+
+.testi-text {
+    padding: 20px 0px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.sertification {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sertification-items {
+    display: flex;
+}
+
+.serti-left, .serti-right {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serti-img {
+    margin: 0px 20px;
+}
+
+.footer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-secondary);
+}
+
+.footer-items {
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.footer-img {
+    position: relative;
+    right: 9px;
+}
+
+.copyright {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* this is css for product page */
+.search-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 0px;
+    position: relative;
+}
+
+.search-header > img {
+    position: absolute;
+    width: 20px;
+    right: 30px;
+}
+
+#search {
+    background-color: var(--bg-gray);
+    border: none;
+    padding: 10px;
+    color: black;
+    border-radius: 30px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #bebcbc;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #bebcbc;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #bebcbc;
+  }
+
+.product-img {
+    max-width: 100%;
+}
+
+.product-img:last-child {
+    margin-top: 0px;
+    margin-bottom: 80px;
+}
+
+.text-wrapper {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.text-wrapper > p {
+    margin: 0px !important;
+}
+
+.text-wrapper > button {
+    margin: 20px 0px;
+}
+
+/* end of product page */
+
+.primary-button:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+/* ini styling untuk blog */
+.blog {
+    margin-top: 30vh;
+    margin-bottom: 10vh;
+}
+
+.blog-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20vh 0px;
+}
+
+.blog-img {
+    width: 350px;
+    z-index: 9;
+}
+
+.blog-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.blog-content-wrapper .title {
+    font-size: 40px;
+    line-height: 114.5%;
+}
+
+.blog-content-wrapper p {
+    font-size: 14px;
+    margin: 30px 0px;
+}
+
+.mobile {
+    display: none;
+}
+/* akhir styling untuk blog */
+
+.about {
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+    padding: 20px;
+}
+
+.about-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.align-left {
+    align-items: center;
+}
+
+.about-title {
+    padding: 10px 0px;
+}
+
+.about-paragraph{
+    padding: 10px 0px;
+}
+
+.pink-color {
+    color: #D09B9C;
+    font-style: italic;
+}
+
+.sosmed-img {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.privacy-policy, .terms-and-conditions {
+    margin: 20vh 0vh;
+}
+
+.privacy-policy > .container > section {
+    margin-bottom: 40px;
+}
+
+.privacy-policy > .container > section > p {
+    margin-bottom: 10px;
+}
+
+.terms-and-conditions > .container > section {
+    margin-bottom: 40px;
+}
+
+.terms-and-conditions > .container > section > p {
+    margin-bottom: 10px;
+}
+
+/* media screen untuk navbar */
+@media only screen and (max-width: 780px) {
+    .leaf-right, .leaf-left {
+        display: none;
+    }
+    .cart {
+        display: block;
+    }
+    .app-left {
+        display: none;
+    }
+    .app-middle {
+        justify-content: flex-start;
+    }
+    .serum-img {
+        display: none;
+    }
+
+    .app-bar {
+        padding: 10px;
+    }
+    
+    .hero >.title {
+        padding: 50px;
+        width: 100%;
+    }
+
+    .hero {
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column ;
+    }
+
+    .hero .primary-button {
+        margin-left: 50px;
+    }
+
+    .button-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+    }
+
+    .testimonial {
+        padding: 30px;
+    }
+
+    .testi-left > img, .testi-right > img {
+        width: 40px;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+    .serti-left > img, .serti-right > img {
+        width: 120px;
+    }
+    .ml-50 {
+        margin-left: 50px;
+    }
+
+    .featured-product .primary-button {
+        margin-bottom: 40px;
+    }
+
+    .sertification-items, .testimonial-items {
+        flex-direction: column;
+    }
+
+    .footer-items {
+        flex-direction: column;
+    }
+
+    .search-header {
+        justify-content: center;
+    }
+
+    #search {
+        width: 100%;
+    }
+
+    /* blog */
+    .blog {
+        margin-top: 20vh;
+    }
+
+    .blog-item {
+        flex-direction: column;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    .blog-content-wrapper {
+        padding: 20px;
+    }
+    .blog-content-wrapper .title {
+        font-size: 18px;
+    }
+
+    .blog-content-wrapper p {
+        margin: 10px 0px;
+        margin-bottom: 30px;
+    }
+
+    .blog-img {
+        width: 150px;
+    }
+    /* end blog */
+
+    .mobile {
+        display: block;
+    }
+
+    .about-items {
+        flex-direction: column-reverse;
+    }
+
+    .about-item {
+        padding: 10px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .align-left {
+        align-items: left !important;
+    }
+
+    .about-title {
+        font-size: 28px;
+        text-align: center;
+    }
+    .logo-about {
+        width: 200px;
+    }
+
+    .web {
+        display: none;
+    }
+}

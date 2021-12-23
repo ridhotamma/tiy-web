@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,700;0,800;1,300;1,400;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     padding: 0px;
     margin: 0px;
@@ -9,6 +11,7 @@ html,body {
     padding: 0px;
     overflow-x: hidden; 
     max-width: 100%;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 :root {
@@ -474,6 +477,51 @@ a, li {
 .blog-body > p {
     margin-bottom: 40px;
 }
+
+.product-detail {
+    padding: 20px;
+    margin-top: 30vh;
+    margin-bottom: 10vh;
+}
+
+.product-testimonial {
+    margin-top: 0px;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.product-detail-title {
+    font-size: 50px;
+    font-weight: 600;
+    color: #4F4F4F;
+    letter-spacing: 5px;
+}
+
+.red-color {
+    color: #B05D6C;
+}
+
+.product-description {
+    margin-top: 60px;
+}
+
+.description-title {
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.text-detail-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 100px;
+    text-align: left;
+}
 /* media screen untuk navbar */
 @media only screen and (max-width: 780px) {
     .leaf-right, .leaf-left {
@@ -643,5 +691,30 @@ a, li {
     .blog-body > p {
         text-align: justify;
         text-align-last: left;
+    }
+
+    .product-detail {
+        margin-top: 15vh;
+    }
+
+    .product-detail-title {
+        margin-top: 20px;
+        font-size: 25px;
+    }
+
+    .body {
+        padding: 10px;
+    }
+
+    .product-detail-img {
+        width: 95%;
+    }
+
+    .description-title {
+        padding: 0px 10px;
+    }
+
+    .text-detail-wrapper {
+        padding-left: 20px !important;
     }
 }

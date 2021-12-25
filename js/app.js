@@ -7,6 +7,9 @@ const registerPhone = document.getElementById('register-phone')
 const phone = document.getElementById('phone')
 const formRegister = document.getElementById('form-register')
 const formLogin = document.getElementById('form-login')
+const mobileMenu = document.querySelector('.mobile-menu')
+const exitButton = document.querySelector('#exit')
+const hamburgerMenu = document.querySelector('.menu')
 
 const loginData = {}
 const userLogs = [
@@ -35,6 +38,14 @@ const generateToken = () => {
 
     return token.join('')
 }
+
+exitButton.addEventListener('click', () => {
+    mobileMenu.style.top = '-100%'
+})
+
+hamburgerMenu.addEventListener('click', () => {
+    mobileMenu.style.top = '0%'
+})
 
 window.onscroll = () => {
     if (window.scrollY > 300) {
@@ -97,12 +108,5 @@ function check() {
     }
 }
 
-formRegister.addEventListener('submit', (e) => {
-    e.preventDefault()
-})
-
-formLogin.addEventListener('submit', (e) => {
-    e.preventDefault()
-})
-
 document.body.addEventListener('load', initializeStorage())
+document.body.innerHTML += ModalFeedback

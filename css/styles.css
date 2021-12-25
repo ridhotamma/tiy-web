@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
 html,body {
     margin: 0px;
     padding: 0px;
@@ -19,6 +23,7 @@ html,body {
     --bg-secondary: #C0D1D9;
     --bg-gray: #F9F8F8;
     --btn-primary: #FCC94E;
+    --btn-secondary: #4F4F4F;
     --btn-primary-hover: #caa03e;
 }
 
@@ -71,6 +76,20 @@ a, li {
     margin: 0 auto;
 }
 
+.secondary-button {
+    background-color: var(--btn-secondary);
+    color: white;
+    border: none;
+    width: 120px;
+    padding: 5px 0px;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.app-right > a:hover {
+    color: white;
+}
 
 .primary-button {
     padding: 10px 0px;
@@ -159,6 +178,7 @@ a, li {
 .hero {
     height: fit-content;
     background-color: var(--bg-primary);
+    position: relative;
 }
 
 .hero .primary-button {
@@ -180,7 +200,7 @@ a, li {
 .serum-img {
     position: absolute;
     max-width: 600px;
-    top: 0;
+    top: -60px;
     bottom: 0;
     right: 0;
     left: 50%;
@@ -194,6 +214,11 @@ a, li {
 .featured-product {
     background-color: var(--bg-primary);
     color: white;
+}
+
+.fp-title {
+    font-size: 35px;
+    padding: 20px;
 }
 
 .testimonial {
@@ -396,6 +421,10 @@ a, li {
 }
 /* akhir styling untuk blog */
 
+.product-list {
+    margin-top: 20vh;
+}
+
 .about {
     margin-top: 20vh;
     margin-bottom: 10vh;
@@ -485,7 +514,7 @@ a, li {
 }
 
 .product-testimonial {
-    margin-top: 0px;
+    margin-top: 100px;
 }
 
 .star {
@@ -514,13 +543,66 @@ a, li {
     letter-spacing: 2px;
 }
 
-.text-detail-wrapper {
+.testi-card {
+    background-color: #F9F8F4;
+    margin: 35px 0px;
+}
+
+.profile-img {
+    width: 100px;
+}
+
+.open-sans {
+    font-family: 'open-sans', sans-serif;
+}
+
+.like, .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    margin: 20vh 0;
+}
+
+.login input {
+    border: none;
+    padding: 10px 15px;
+    width: 350px;
+    background-color: #F2F2F2;
+    margin-bottom: 10px;
+}
+
+.login label {
+    margin-bottom: 10px;
+}
+
+.checkout input {
+    border: none;
+    padding: 10px 15px;
+    width: 350px;
+    background-color: #F2F2F2;
+    margin-bottom: 10px;
+}
+
+.checkout label {
+    margin-bottom: 10px;
+}
+
+.custom-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 70vh;
+}
+
+.custom-control {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding-left: 100px;
-    text-align: left;
 }
 /* media screen untuk navbar */
 @media only screen and (max-width: 780px) {
@@ -540,7 +622,7 @@ a, li {
         display: none;
     }
 
-    .app-bar {
+    .app-bar, .app-bar-pink {
         padding: 10px;
     }
     
@@ -550,15 +632,22 @@ a, li {
     }
 
     .hero {
-        height: 70vh;
+        height: 60vh;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column ;
+        text-align: center;
+    }
+
+    .featured-product {
+        text-align: center;
+        padding: 0px !important;
     }
 
     .hero .primary-button {
-        margin-left: 50px;
+        text-align: center;
+        margin: 0 auto;
     }
 
     .button-wrapper {
@@ -568,21 +657,53 @@ a, li {
         width: 100%;
     }
 
-    .testimonial {
-        padding: 30px;
+    .testi-left > img, .testi-right > img {
+        width: 20px;
     }
 
-    .testi-left > img, .testi-right > img {
-        width: 40px;
+    .testimonial {
+        padding: 20px 40px;
+    }
+
+    .testi-text > h3{
+        font-size: 10px;
+        padding: 0px 20px;
+    }
+
+    .testi-left, .testi-right {
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    .testi-left {
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .testi-right {
+        align-items: flex-end;
+        margin-bottom: 20px;
     }
 
     .testimonial-items {
-        align-items: center;
+        display: flex;
+        flex-direction: row !important;
+        width: 100%;
     }
 
     .title {
         font-size: 35px;
     }
+
+    .fp-desc {
+        color: #4F4F4F;
+    }
+
+    .small {
+        font-size: 25px !important;
+    }
+
     .serti-left > img, .serti-right > img {
         width: 120px;
     }
@@ -693,6 +814,10 @@ a, li {
         text-align-last: left;
     }
 
+    .product-list {
+        margin-top: 10vh;
+    }
+
     .product-detail {
         margin-top: 15vh;
     }
@@ -716,5 +841,64 @@ a, li {
 
     .text-detail-wrapper {
         padding-left: 20px !important;
+    }
+
+    .testi-top {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .testi-top > * {
+        margin-right: 20px;
+    }
+
+    .profile-img {
+        width: 50px;
+    }
+
+    .like-img {
+        width: 35px;
+    }
+
+    .like {
+        justify-content: flex-end;
+    }
+
+    .profile {
+        justify-content: flex-start;
+        padding-bottom: 20px;
+    }
+    .profile > img {
+        margin-right: 20px;
+    }
+
+    .product-price {
+        font-size: 40px;
+    }
+
+    .rating {
+        font-size: 10px;
+    }
+
+    .serum-img-mobile {
+        width: 500px;
+        top: 48%;
+        bottom: 0%;
+        left: -22%;
+        display: block;
+        position: absolute;
+        right: 0%;
+    }
+
+    .custom-form {
+        justify-content: flex-start;
+        padding: 20px;
+        height: 50vh;
+    }
+
+    .fp-title {
+        font-size: 25px;
     }
 }

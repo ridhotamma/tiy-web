@@ -30,6 +30,7 @@ html,body {
     overflow-x: hidden; 
     max-width: 100%;
     font-family: 'Poppins', sans-serif !important;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -190,7 +191,7 @@ a, li {
 
 /* ini untuk header hero */
 .hero {
-    height: 75vh;
+    height: 65vh;
     background-color: var(--bg-primary);
     position: relative;
 }
@@ -642,6 +643,135 @@ a, li {
     padding: 10px 20px;
 }
 
+/* halaman checkout */
+.checkout-wrapper {
+    margin: 25vh 0 20vh 0;
+}
+
+.checkout-form-wrapper {
+    padding: 0px 30px 0px 0px;
+    width: 70%;
+}
+
+.checkout-wrapper .checkout-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.checkout-input-inline, .checkout-input-full {
+    padding: 15px;
+    padding-left: 0px;
+    display: flex;
+}
+
+.checkout-input-inline .input-wrapper {
+    margin-right: 25px;
+}
+
+.checkout-input-inline .input-wrapper:last-child {
+    margin-right: 0;
+}
+
+.checkout-input-inline .input-wrapper input {
+    width: 100%;
+}
+
+.checkout-input-full .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-wrapper input, .text-area {
+    background-color: #F2F2F2;
+    padding: 12px 0;
+    padding-left: 15px;
+    border: none;
+}
+
+.catatan {
+    padding: 50px 0 !important;
+    padding-top: 10px !important;
+    padding-left: 10px !important;
+}
+
+.small {
+    font-size: 10px;
+}
+
+.pesanan-details {
+    width: 30%;
+}
+
+.pesanan-item {
+    margin-bottom: 20px;
+}
+
+.pesanan-wrapper {
+    padding: 20px;
+    background-color: #F2F2F2;
+}
+
+.pesanan-item > img {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pesanan-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.subtotal {
+    padding-top: 30px;
+}
+
+.subtotal-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pembayaran {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pembayaran-item > img {
+    width: 110px;
+}
+
+.pembayaran-wrapper {
+    padding: 20px;
+    background-color: #F2F2F2;
+    margin-top: 50px;
+}
+
+.pembayaran-title {
+    font-size: 17px; 
+    font-weight: 500;
+}
+
+.checkout-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-text {
+    width: 83%;
+    margin: 0 auto;
+}
+/* akhir halaman checkout */
+
+
 /* media screen untuk navbar */
 @media only screen and (max-width: 780px) {
     .leaf-right, .leaf-left {
@@ -943,5 +1073,51 @@ a, li {
 
     .login {
         margin-top: 15vh;
+    }
+
+    .pesanan-details {
+        width: 90%;
+    }
+
+    .pesanan-item > img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .checkout-wrapper {
+        margin-top: 15vh;
+        margin-bottom: 10vh;
+    }
+    .checkout-content-wrapper {
+        flex-direction: column-reverse;
+    }
+    
+    .checkout-form-wrapper {
+        width: 90%;
+        padding: 0px;
+    }
+
+    .checkout-input-inline .input-wrapper {
+        margin-right: 0px;
+        margin-bottom: 25px;
+    }
+
+    .checkout-input-inline .input-wrapper:last-child {
+        margin-right: 0px;
+        margin-bottom: 0px;
+    }
+    .checkout-input-inline, .checkout-input-full {
+        padding: 0px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .checkout-text {
+        text-align: center !important;
+    }
+
+    .small {
+        font-size: 15px !important;
     }
 }

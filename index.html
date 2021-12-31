@@ -19,11 +19,28 @@
       </div>
       <div class="app-right">
         <a href="./login.html" class="secondary-button mx-3 web">Log In</a>
-        <img src="./img/cart.png" alt="cart png" class="cart">
+        <a href="./cart.html">
+          <img src="./img/cart.png" alt="cart png" class="cart">
+        </a>
         <img src="./img/menu.png" alt="menu png" class="menu">
       </div>
     </div>
 
+    <!-- whatsapp button -->
+    <a href="https://google.com">
+      <button class="button-whatsapp web">
+        <p>Need Help? Whatsapp Us</p>
+        <img src="./img/whatsapp.png" alt="">
+      </button>
+    </a>
+    <!-- end whatsapp button -->
+
+    <!-- whatsapp button mobile -->
+    <a href="https://google.com" class="whatsapp-button-mobile mobile">
+      <img src="./img/whatsapp.png" alt="">
+    </a>
+    <!-- whatsapp button mobile -->
+  
     <!-- menu for mobile -->
     <div class="mobile-menu shadow-bottom mobile-visible">
       <img src="./img/exit.png" alt="exit" id="exit">
@@ -50,30 +67,36 @@
     </div>
     <!-- end of menu for mobile -->
 
-    <div class="hero" style="margin-top: 15vh;">
+    <div class="hero" style="margin-top: 15vh; position: relative;">
         <h1 class="title">Full Spectrum, Oil & High Grade Hemp Extract</h1>
         <img src="./img/serum.png" alt="serum" class="serum-img">
         <div class="button-wrapper">
         <button class="primary-button">Shop now</button>
       </div>
+          <!-- serum mobile -->
+        <div style="width: 100%;
+                    position: absolute;
+                    z-index: 9;
+                    bottom: -92px;
+                    padding-right: 20px;" class="mobile">
+          <img src="./img/serum mobile.svg" alt="" style="display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+        </div>
+          <!-- end of serum mobile -->
     </div>
 
     <div class="new-products mt-40 text-center container">
       <div class="text-wrapper">
-        <h1 class="title" style="color: black;">New Products</h1>
-        <p class="mb-20">Lets try our new arrival for good skin</p>
+        <h1 class="title web" style="color: black;">New Products</h1>
+        <p class="mb-20 web">Lets try our new arrival for good skin</p>
+
+        <h1 class="mobile" style="font-size: 20px;">New Product</h1>
+        <p class="mobile" style="font-size: 12px;">Lets try our new arrival for good skin</p>
       </div>
 
-      <div class="row item-center">
-        <div class="col-lg-4 col-sm-12 col-md-6">
+      <div class="item-center">
           <img src="./img/serum1.png" alt="serum1" width="300px">
-        </div>
-        <div class="col-lg-4 col-sm-12 col-md-6">
           <img src="./img/Spray.png" alt="spray" width="300px">
-        </div>
-        <div class="col-lg-4 col-sm-12 col-md-6">
           <img src="./img/cream.png" alt="cream" width="300px">
-        </div>
       </div>
 
       <button class="primary-button my-5">See More</button>

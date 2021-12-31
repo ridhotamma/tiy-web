@@ -89,6 +89,9 @@ a, li {
 
 .item-center {
     margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .secondary-button {
@@ -191,7 +194,7 @@ a, li {
 
 /* ini untuk header hero */
 .hero {
-    height: 65vh;
+    height: 75vh;
     background-color: var(--bg-primary);
     position: relative;
 }
@@ -771,7 +774,107 @@ a, li {
 }
 /* akhir halaman checkout */
 
+.shopping-cart {
+    margin: 25vh 0;
+}
 
+.shopping-data {
+    padding: 0 20px;
+}
+
+.row-head {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    border-bottom: 1px #DEDEDE solid;
+    padding-bottom: 5px;
+    padding-left: 0;
+}
+
+.row-child {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    width: 95%;
+    padding-bottom: 5px;
+    padding-left: 0;
+}
+
+.button-cart {
+    padding: 5px;
+    width: 30px;
+    color: white;
+    background-color: var(--btn-primary);
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.row-data {
+    display: flex;
+    align-items: center;
+    flex-basis: 100%;
+}
+
+#count {
+    margin: 0 8px;
+    padding: 5px 12px;
+    background-color: #E8E8E8;
+}
+
+.subtotal-cart, .total-cart {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-card {
+    background-color: #F9F8F4;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+input[type='checkbox'] {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.keranjang {
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.button-whatsapp {
+    border: none;
+    position: fixed;
+    z-index: 9;
+    top: 80%;
+    right: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #00B934;
+    color: white;
+    border-radius: 60px;
+    width: 310px;
+    font-family: 'poppins', sans-serif;
+    font-weight: 500;
+}
+
+.button-whatsapp > p {
+    margin-bottom: 5px;
+}
+
+.button-whatsapp > img {
+    width: 50px;
+}
+
+.whatsapp-button-mobile {
+    position: fixed;
+    z-index: 9;
+    top: 85%;
+    right: 5%;
+}
 /* media screen untuk navbar */
 @media only screen and (max-width: 780px) {
     .leaf-right, .leaf-left {
@@ -797,6 +900,7 @@ a, li {
     .hero >.title {
         padding: 50px;
         width: 100%;
+        padding-bottom: 15px;
     }
 
     .hero {
@@ -806,7 +910,7 @@ a, li {
         align-items: center;
         flex-direction: column ;
         text-align: center;
-        padding-bottom: 50px;
+        padding-bottom: 200px;
     }
 
     .featured-product {
@@ -817,6 +921,21 @@ a, li {
     .hero .primary-button {
         text-align: center;
         margin: 0 auto;
+        width: 120px;
+        font-size: 10px;
+    }
+
+    .item-center > img {
+        width: 80px;
+        margin-right: 20px;
+    }
+
+    .item-center > img:last-child {
+        margin-right: 0;
+    }
+
+    .item-center {
+        justify-content: center;
     }
 
     .button-wrapper {
@@ -1119,5 +1238,38 @@ a, li {
 
     .small {
         font-size: 15px !important;
+    }
+
+    .shopping-cart {
+        margin-top: 15vh;
+        margin-bottom: 10vh;
+    }
+
+    .keranjang {
+        text-align: center;
+        margin-bottom: 40px;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .complicated {
+        display: flex; 
+        flex-direction: column;
+    }
+
+    .row-data > img {
+        width: 100px;
+        box-shadow: 0px 20px 15px -15px rgba(0, 0, 0, 0.15);
+    }
+
+    .shopping-cart .container .row > * {
+        padding: 0 30px !important;
+    }
+
+    input[type='checkbox'] {
+        margin-right: 15px !important;
+    }
+    .checkout-card > .primary-button {
+        width: 100%;
     }
 }

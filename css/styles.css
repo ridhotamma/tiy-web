@@ -249,6 +249,10 @@ a, li {
     padding: 20px;
 }
 
+.new-products > .text-wrapper {
+    margin-bottom: 40px;
+}
+
 .testimonial {
     padding: 50px;
     display: flex;
@@ -272,6 +276,10 @@ a, li {
     margin: 0 auto;
     text-align: center;
     color: white;
+}
+
+.testi-text h3 {
+    font-size: 25px;
 }
 
 .sertification {
@@ -940,6 +948,11 @@ input[type='radio'] {
         width: 100%;
         padding-bottom: 15px;
         font-size: 40px;
+    }
+
+    .new-products > .text-wrapper {
+        margin-top: 40px;
+        margin-bottom: 0px;
     }
 
     .hero {

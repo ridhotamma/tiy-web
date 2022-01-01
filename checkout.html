@@ -18,6 +18,9 @@
         <a href="./index.html"><img src="./img/logo.png" alt="logo png" width="125px"></a>
       </div>
       <div class="app-right">
+        <a href="#">
+          <img src="./img/profile.png" width="30px" alt="" id="profile">
+        </a>
         <a href="./login.html" class="secondary-button mx-3 web" id="login-button">Log In</a>
         <a href="./cart.html">
           <img src="./img/cart.png" alt="cart png" class="cart" id="cart">
@@ -65,6 +68,9 @@
       </div>
     </div>
     <!-- end of menu for mobile -->
+
+    <img src="./img/daun kanan.png" alt="leaf right" style="position: absolute; width: 200px; right: 0; top: 20%; z-index: -1;">
+    <img src="./img/daun kiri.png" alt="leaf right" style="position: absolute; width: 100px; top: 180%; z-index: -1;">
 
     <!-- checkout section -->
     <div class="checkout-wrapper">
@@ -297,7 +303,8 @@
       buyButton.addEventListener('click', () => {
           paymentAction()
     })         
-      buyButtonMobile.addEventListener('click', () => {
+      buyButtonMobile.addEventListener('click', (e) => {
+          e.preventDefault()
           paymentAction()
       })
     </script>

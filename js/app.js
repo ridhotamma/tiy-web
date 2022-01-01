@@ -5,6 +5,7 @@ const hamburgerMenu = document.querySelector('.menu')
 const cartIcon = document.querySelector('#cart')
 const loginButton = document.querySelector('#login-button')
 const loginbuttonMobile = document.querySelector('#login-button-mobile')
+const profileIcon = document.querySelector('#profile')
 
 const generateToken = () => {
     const randomString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'.split('')
@@ -42,7 +43,9 @@ if(userToken === null) {
     loginButton.innerText = 'Login'
     loginbuttonMobile.innerText = "Login"
     loginbuttonMobile.style.color = 'black'
+    profileIcon.style.display = 'none'
 } else {
+    profileIcon.style.display = 'block'
     cartIcon.style.display = 'block'
     loginButton.innerText = 'logout'
     loginbuttonMobile.innerText = "logout"

@@ -169,7 +169,7 @@
 
           if(existingEmail === emailValue && existingPassword === passwordValue) {
             sessionStorage.setItem('login-session', generateToken())
-            window.location.href = 'http://localhost:5501/index.html'
+            history.back()
           } else {
             alert("User Invalid")
           }

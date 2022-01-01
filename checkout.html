@@ -73,7 +73,7 @@
             <p class="web">Detail Penagihan</p>
         </div>
         <div class="container d-flex align-items-start checkout-content-wrapper">
-            <div class="checkout-form-wrapper">
+            <form class="checkout-form-wrapper">
                 <hr class="web">
                 <div class="checkout-input-inline">
                     <div class="input-wrapper">
@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <button class="primary-button mobile mt-4" id="buy-button-mobile" style="width: 100%;">Beli</button>
-            </div>
+              </form>
             <div class="pesanan-details">
                 <div class="pesanan-wrapper">
                     <p><b>Pesanan Anda</b></p>
@@ -232,10 +232,11 @@
       const paymentStatus = document.querySelector('#payment-status')
       const paymentComplete = document.querySelector('#payment-complete')
       const completeButton = document.querySelector('#complete-button')
-  
+      
       document.addEventListener('keydown', function (event) {
         event.preventDefault();
         if (event.ctrlKey && event.key === 's') {
+          autocomplete = true
           firstName.value = "Gusti"
           lastName.value = "karnawan"
           alamat.value = "Manggarai"
@@ -248,6 +249,7 @@
           catatan.value = "Taro barang di depan rumah"
         }
         if (event.ctrlKey && event.key === 'd') {
+          autocomplete = false
           firstName.value = ""
           lastName.value = ""
           alamat.value = ""
@@ -270,22 +272,32 @@
         paymentComplete.classList.add('d-none')
       })
 
-      buyButton.addEventListener('click', () => {
-        paymentStatus.classList.remove('d-none')
-        let timer = setInterval(() => { 
-          counting()
-        }, 500)
+      const paymentAction = () => {
+        if(autocomplete) {
+          paymentStatus.classList.remove('d-none')
+          let timer = setInterval(() => { 
+            counting()
+          }, 500)
 
-      const counting = () => {
-        count++
-        console.log(count)
-        if(count % 5 == 0) {
-          paymentStatus.classList.add('d-none')
-          paymentComplete.classList.remove('d-none')
-          clearInterval(timer)
+        const counting = () => {
+          count++
+          console.log(count)
+          if(count % 5 == 0) {
+            paymentStatus.classList.add('d-none')
+            paymentComplete.classList.remove('d-none')
+            clearInterval(timer)
+          }
         }
-      }
+       } else {
+         alert('harap lengkapi formulir')
+       }
+    }
+      buyButton.addEventListener('click', () => {
+          paymentAction()
     })         
+      buyButtonMobile.addEventListener('click', () => {
+          paymentAction()
+      })
     </script>
   </body>
 </html>

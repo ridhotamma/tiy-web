@@ -48,10 +48,10 @@ if(userToken === null) {
     loginbuttonMobile.innerText = "logout"
     loginButton.addEventListener('click', () => {
         sessionStorage.removeItem('login-session')
-        loginButton.setAttribute('href', 'http://localhost:5501/index.html')
+        history.back()
     })
     loginbuttonMobile.addEventListener('click', () => {
         sessionStorage.removeItem('login-session')
-        loginButton.setAttribute('href', 'http://localhost:5501/index.html')
+        history.back()
     })
 }

@@ -199,7 +199,7 @@ a, li {
 
 /* ini untuk header hero */
 .hero {
-    height: 75vh;
+    height: 70vh;
     background-color: var(--bg-primary);
     position: relative;
     font-family: 'century751', sans-serif;

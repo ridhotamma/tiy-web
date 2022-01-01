@@ -1366,4 +1366,8 @@ input[type='radio'] {
     .checkout-wrapper .align-items-start {
         align-items: center !important;
     }
+
+    #profile {
+        display: none !important;
+    }
 }

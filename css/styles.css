@@ -213,7 +213,8 @@ a, li {
 .hero > .title {
     padding: 60px 100px 30px 0px;
     padding-left: 150px;
-    width: 55%;
+    width: 58%;
+    font-size: 55px;
     color: white;
 }
 
@@ -842,6 +843,10 @@ a, li {
     border-radius: 15px;
 }
 
+.checkout-card .primary-button {
+    width: 100%;
+}
+
 input[type='checkbox'] {
     width: 20px !important;
     height: 20px !important;
@@ -1306,7 +1311,7 @@ input[type='checkbox'] {
     input[type='checkbox'] {
         margin-right: 15px !important;
     }
-    .checkout-card > .primary-button {
+    .checkout-card > a > .primary-button{
         width: 100%;
     }
 }

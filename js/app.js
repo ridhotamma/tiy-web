@@ -1,31 +1,10 @@
 const navbar = document.querySelector('#appbar');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const registerEmail = document.getElementById('register-email')
-const registerPassword = document.getElementById('register-password')
-const registerPhone = document.getElementById('register-phone')
-const phone = document.getElementById('phone')
-const formRegister = document.getElementById('form-register')
-const formLogin = document.getElementById('form-login')
 const mobileMenu = document.querySelector('.mobile-menu')
 const exitButton = document.querySelector('#exit')
 const hamburgerMenu = document.querySelector('.menu')
-
-const loginData = {}
-const userLogs = [
-    {
-        email: 'gusti@gmail.com',
-        password: 'gusti123'
-    }, 
-    {
-        email: 'ridho@gmail.com',
-        password: 'ridho2002'
-    }
-]
-
-const initializeStorage = () => {
-    localStorage.setItem('user-logs', JSON.stringify(userLogs))
-}
+const cartIcon = document.querySelector('#cart')
+const loginButton = document.querySelector('#login-button')
+const loginbuttonMobile = document.querySelector('#login-button-mobile')
 
 const generateToken = () => {
     const randomString = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'.split('')
@@ -55,58 +34,24 @@ window.onscroll = () => {
     }
 };
 
-// login register logic
-function store(){
-    if (registerEmail.value.length == 0 || registerPassword.value.length == 0 || registerPhone.value.length == 0){
-        alert('Please complete your data');
-    } else {
-        const newUser = {
-            email: registerEmail.value,
-            password: registerPassword.value,
-            phone: registerPhone.value
-        }
+const userToken = sessionStorage.getItem('login-session')
 
-        
-        alert('Your account has been created');
-    }
-}
 
-//checking
-function check() {
-    const storedData = JSON.parse(localStorage.getItem('user-logs'))
-
-    const userEmail = document.getElementById('email');
-    const userPassword = document.getElementById('password');
-
-    const storedEmail = storedData.map(data => {
-        let result
-        if(data.email === userEmail.value) {
-            result = data.email
-        }
-
-        return result
+if(userToken === null) {
+    cartIcon.style.display = 'none'
+    loginButton.innerText = 'Login'
+    loginbuttonMobile.innerText = "Login"
+    loginbuttonMobile.style.color = 'black'
+} else {
+    cartIcon.style.display = 'block'
+    loginButton.innerText = 'logout'
+    loginbuttonMobile.innerText = "logout"
+    loginButton.addEventListener('click', () => {
+        sessionStorage.removeItem('login-session')
+        loginButton.setAttribute('href', 'http://localhost:5501/index.html')
     })
-    const storedPassword = storedData.map(data => {
-        let result
-        if(data.password === userPassword.value) {
-            result = data.password
-        }
-
-        return result
+    loginbuttonMobile.addEventListener('click', () => {
+        sessionStorage.removeItem('login-session')
+        loginButton.setAttribute('href', 'http://localhost:5501/index.html')
     })
-
-    console.log(storedPassword)
-    console.log(storedEmail)
-    if (userEmail.value == storedEmail && userPassword.value == storedPassword){
-        localStorage.clear('login-data')
-        loginData.email = storedEmail
-        loginData.password = storedPassword
-        loginData.token = generateToken()
-        localStorage.setItem('login-data', loginData)
-    } else {
-        alert('User not Found');
-    }
 }
-
-document.body.addEventListener('load', initializeStorage())
-document.body.innerHTML += ModalFeedback

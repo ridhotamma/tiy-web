@@ -37,13 +37,13 @@
                     <form action="" class="custom-form" id="form-login">
                         <div class="custom-control">
                             <label for="email">Alamat Email</label>
-                            <input type="email" name="email" id="email" placeholder="john@email.com">
+                            <input type="email" name="email" id="login-email" placeholder="john@email.com">
                         </div>
                         <div class="custom-control">
                             <label for="password">Kata Sandi</label>
-                            <input type="password" name="password" id="password" placeholder="password">
+                            <input type="password" name="password" id="login-password" placeholder="password">
                         </div>
-                        <button class="primary-button mt-4" onclick="check()">Masuk</button>
+                        <button class="primary-button mt-4">Masuk</button>
                     </form>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
@@ -97,14 +97,53 @@
 
     <script src="./js/app.js "></script>
     <script>
+      const formRegister = document.querySelector('#form-register')
+      const formLogin = document.querySelector('#form-login')
+
+      const store = () => {
+      }
+
       formRegister.addEventListener('submit', (e) => {
           e.preventDefault()
+
+          const emailInputRegister = document.querySelector('#register-email')
+          const passwordInputRegister = document.querySelector('#register-password')
+          const phoneInputRegister = document.querySelector('#register-phone')
+
+          const emailValue = emailInputRegister.value
+          const passwordValue = passwordInputRegister.value
+          const phoneValue = phoneInputRegister.value
+
+          if(emailValue && passwordValue && phoneValue) {
+            localStorage.setItem('user-email', emailValue)
+            localStorage.setItem('user-password', passwordValue)
+            localStorage.setItem('user-phone', phoneValue)
+
+            alert('User Berhasil Registrasi!')
+          } else {
+            alert('Harap Lengkapi semua data')
+          }
       })
 
       formLogin.addEventListener('submit', (e) => {
           e.preventDefault()
-      })
 
+          const existingEmail = localStorage.getItem('user-email')
+          const existingPassword = localStorage.getItem('user-password')
+
+          const emailInputLogin = document.querySelector('#login-email')
+          const passwordInputLogin = document.querySelector('#login-password')
+
+          const emailValue = emailInputLogin.value
+          const passwordValue = passwordInputLogin.value
+
+          if(existingEmail === emailValue && existingPassword === passwordValue) {
+            sessionStorage.setItem('login-session', generateToken())
+            window.location.href = 'http://localhost:5501/index.html'
+          } else {
+            alert("User Invalid")
+          }
+      })
     </script>
   </body>
 </html>

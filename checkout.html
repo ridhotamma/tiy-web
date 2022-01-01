@@ -246,7 +246,7 @@
 
       document.addEventListener('keydown', function (event) {
         event.preventDefault();
-        if (event.ctrlKey && event.key === 's') {
+        if ((event.ctrlKey && event.key === 's') || (event.metaKey && event.key === 's')) {
           autocomplete = true
           firstName.value = "Gusti"
           lastName.value = "karnawan"

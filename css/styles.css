@@ -720,6 +720,17 @@ a, li {
     margin-bottom: 20px;
 }
 
+.pesanan-item > p {
+    font-size: 14px;
+}
+
+.pesanan-item > p:nth-child(2) {
+    display: flex;
+    padding-left: 10px;
+    width: 40%;
+    justify-content: start;
+}
+
 .pesanan-wrapper {
     padding: 20px;
     background-color: #F2F2F2;
@@ -759,6 +770,11 @@ a, li {
 
 .pembayaran-item > img {
     width: 110px;
+}
+
+.pesanan-item > img {
+    width: 70px !important;
+    height: 70px !important;
 }
 
 .pembayaran-wrapper {
@@ -890,6 +906,10 @@ input[type='checkbox'] {
     right: 5%;
 }
 
+input[type='radio'] {
+    width: 15px;
+    height: 15px;
+}
 .force-hidden {
     display: none !important;
 }
@@ -1318,5 +1338,8 @@ input[type='checkbox'] {
     }
     .checkout-card > a > .primary-button{
         width: 100%;
+    }
+    .checkout-wrapper .align-items-start {
+        align-items: center !important;
     }
 }

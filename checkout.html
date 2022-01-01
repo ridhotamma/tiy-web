@@ -18,14 +18,30 @@
         <a href="./index.html"><img src="./img/logo.png" alt="logo png" width="125px"></a>
       </div>
       <div class="app-right">
-        <a href="./login.html" class="secondary-button mx-3 web">Log In</a>
-        <img src="./img/cart.png" alt="cart png" class="cart">
+        <a href="./login.html" class="secondary-button mx-3 web" id="login-button">Log In</a>
+        <a href="./cart.html">
+          <img src="./img/cart.png" alt="cart png" class="cart" id="cart">
+        </a>
         <img src="./img/menu.png" alt="menu png" class="menu">
       </div>
     </div>
 
-    <!-- menu for mobile -->
-    <div class="mobile-menu shadow-bottom mobile-visible">
+    <div id="payment-status" class="d-none" style="position: fixed; height: 100vh; background-color: white; width: 100%; z-index: 999; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+      <div class="spinner-border text-danger" role="status" style="width: 4em; height: 4em;">
+      </div>
+      <br>
+      <p>Menyelesaikan Pembayaran</p>
+    </div>
+
+    <div id="payment-complete" class="d-none" style="position: fixed; height: 100vh; width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; z-index: 999;">
+       <div class="d-flex justify-content-center align-items-center flex-column p-4" style="  box-shadow: 1px 1px 20px 2px #aaaaaa; background-color: white;">
+        <p>Terima Kasih Telah Bertransaksi</p>
+        <button class="primary-button" id="complete-button">Ok</button>
+       </div>
+    </div>
+
+     <!-- menu for mobile -->
+     <div class="mobile-menu shadow-bottom mobile-visible">
       <img src="./img/exit.png" alt="exit" id="exit">
       <div class="mobile-menu-items">
         <div class="mobile-menu-item">
@@ -44,7 +60,7 @@
           <a href="#" style="color: black;">Profil</a>
         </div>
         <div class="mobile-menu-item is-login">
-          <a href="#" style="color: red;">Log out</a>
+          <a href="./login.html" style="color: red;" id="login-button-mobile">Log out</a>
         </div>
       </div>
     </div>
@@ -56,66 +72,66 @@
             <h3 class="checkout-title">Checkout</h3>
             <p class="web">Detail Penagihan</p>
         </div>
-        <div class="container d-flex checkout-content-wrapper">
+        <div class="container d-flex align-items-start checkout-content-wrapper">
             <div class="checkout-form-wrapper">
                 <hr class="web">
                 <div class="checkout-input-inline">
                     <div class="input-wrapper">
                         <label for="nama-depan">Nama Depan</label>
-                        <input type="text" class="checkout-input">
+                        <input type="text" class="checkout-input" id="first-name">
                     </div>
                     <div class="input-wrapper">
                         <label for="nama-belakang">Nama Belakang</label>
-                        <input type="text" class="checkout-input">
+                        <input type="text" class="checkout-input" id="last-name">
                     </div>
                 </div>
                 <div class="checkout-input-full">
                     <div class="input-wrapper">
                         <label for="alamat">Alamat</label>
-                        <textarea class="text-area" placeholder="Nomer rumah dan nama jalan"></textarea>
+                        <textarea class="text-area" placeholder="Nomer rumah dan nama jalan" id="alamat"></textarea>
                     </div>
                 </div>
                 <div class="checkout-input-full">
                     <div class="input-wrapper">
                         <label for="provinsi">Provinsi</label>
-                        <input type="text" placeholder="Pilih Provinsi">
+                        <input type="text" placeholder="Pilih Provinsi" id="provinsi">
                     </div>
                 </div>
                 <div class="checkout-input-full">
                     <div class="input-wrapper">
                         <label for="kota">Kota</label>
-                        <input type="text" placeholder="Pilih Kota">
+                        <input type="text" placeholder="Pilih Kota" id="kota">
                     </div>
                 </div>
                 <div class="checkout-input-full">
                     <div class="input-wrapper">
                         <label for="kecamatan">Kecamatan</label>
-                        <input type="text" placeholder="Pilih Kecamatan">
+                        <input type="text" placeholder="Pilih Kecamatan" id="kecamatan">
                     </div>
                 </div>
                 <div class="checkout-input-inline">
                     <div class="input-wrapper">
                         <label for="kode-pos">Kode Pos</label>
-                        <input type="text">
+                        <input type="text" id="kodepos">
                     </div>
                     <div class="input-wrapper">
                         <label for="Nomor-telepon">Nomor Telepon</label>
-                        <input type="text">
+                        <input type="text" id="phone">
                     </div>
                 </div>
                 <div class="checkout-input-full">
                     <div class="input-wrapper">
                         <label for="email">Email</label>
-                        <input type="text" placeholder="Masukan Email">
+                        <input type="text" placeholder="Masukan Email" id="email">
                     </div>
                 </div>
                 <div class="checkout-input-full">
                     <div class="input-wrapper">
                         <label for="catatan-pengiriman">Catatan Pengiriman (Opsional)</label>
-                        <textarea class="text-area catatan" placeholder="Catatan untuk pesanan anda, misal : Catatan khusus pengiriman"></textarea>
+                        <textarea class="text-area catatan" placeholder="Catatan untuk pesanan anda, misal : Catatan khusus pengiriman" id="catatan"></textarea>
                     </div>
                 </div>
-                <button class="primary-button mobile mt-4" style="width: 100%;">Beli</button>
+                <button class="primary-button mobile mt-4" id="buy-button-mobile" style="width: 100%;">Beli</button>
             </div>
             <div class="pesanan-details">
                 <div class="pesanan-wrapper">
@@ -124,18 +140,18 @@
                     <hr>
                     <div class="pesanan-list">
                         <div class="pesanan-item">
-                            <img src="./img/products/01 serum.png" alt="">
+                            <img src="./img/products/03 cream.png" alt="">
                             <p><i>Red Jelly</i></p>
                             <p class="red-color">Rp. 35.000</p>
                         </div> 
                         <div class="pesanan-item">
                             <img src="./img/products/01 serum.png" alt="">
-                            <p><i>Red Jelly</i></p>
+                            <p><i>Serum Series</i></p>
                             <p class="red-color">Rp. 35.000</p>
                         </div> 
                         <div class="pesanan-item">
-                            <img src="./img/products/01 serum.png" alt="">
-                            <p><i>Red Jelly</i></p>
+                            <img src="./img/products/02 Spray.png" alt="">
+                            <p><i>Glowing Spray</i></p>
                             <p class="red-color">Rp. 35.000</p>
                         </div> 
                     </div>
@@ -167,7 +183,7 @@
                 </div>
                 <p class="mt-5"><b>Detail Penagihan</b></p>
                 <hr>
-                <button class="primary-button mt-5 web" style="width: 100%;;">Bayar</button>
+                <button class="primary-button mt-5 web" id="buy-button" style="width: 100%;;">Bayar</button>
             </div>
         </div>
     </div>
@@ -200,5 +216,76 @@
         All rights reserved.</p>
     </div>
     <script src="./js/app.js"></script>
+
+    <script>
+      const firstName = document.querySelector('#first-name')
+      const lastName = document.querySelector('#last-name')
+      const alamat = document.querySelector('#alamat')
+      const provinsi = document.querySelector('#provinsi')
+      const kota = document.querySelector('#kota')
+      const kecamatan = document.querySelector('#kecamatan')
+      const kodepos = document.querySelector('#kodepos')
+      const phone = document.querySelector('#phone')
+      const email = document.querySelector('#email')
+      const catatan = document.querySelector('#catatan')
+
+      const paymentStatus = document.querySelector('#payment-status')
+      const paymentComplete = document.querySelector('#payment-complete')
+      const completeButton = document.querySelector('#complete-button')
+  
+      document.addEventListener('keydown', function (event) {
+        event.preventDefault();
+        if (event.ctrlKey && event.key === 's') {
+          firstName.value = "Gusti"
+          lastName.value = "karnawan"
+          alamat.value = "Manggarai"
+          provinsi.value = "DKI Jakarta"
+          kota.value = "Jakarta Barat"
+          kecamatan.value = "Pondok Pinang"
+          kodepos.value = "12280"
+          phone.value = "+6285166778888"
+          email.value = "gusti@ui.co.id"
+          catatan.value = "Taro barang di depan rumah"
+        }
+        if (event.ctrlKey && event.key === 'd') {
+          firstName.value = ""
+          lastName.value = ""
+          alamat.value = ""
+          provinsi.value = ""
+          kota.value = ""
+          kecamatan.value = ""
+          kodepos.value = ""
+          phone.value = ""
+          email.value = ""
+          catatan.value = ""
+        }
+    });
+
+      const buyButton = document.querySelector('#buy-button')
+      const buyButtonMobile = document.querySelector('#buy-button-mobile')
+
+      let count = 0
+
+      completeButton.addEventListener('click', () => {
+        paymentComplete.classList.add('d-none')
+      })
+
+      buyButton.addEventListener('click', () => {
+        paymentStatus.classList.remove('d-none')
+        let timer = setInterval(() => { 
+          counting()
+        }, 500)
+
+      const counting = () => {
+        count++
+        console.log(count)
+        if(count % 5 == 0) {
+          paymentStatus.classList.add('d-none')
+          paymentComplete.classList.remove('d-none')
+          clearInterval(timer)
+        }
+      }
+    })         
+    </script>
   </body>
 </html>

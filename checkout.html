@@ -233,6 +233,8 @@
       const paymentComplete = document.querySelector('#payment-complete')
       const completeButton = document.querySelector('#complete-button')
       
+      let autocomplete = false
+
       document.addEventListener('keydown', function (event) {
         event.preventDefault();
         if (event.ctrlKey && event.key === 's') {

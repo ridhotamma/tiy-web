@@ -10,12 +10,13 @@
   <body>
     <div class="app-bar-pink" id="appbar">
       <div class="app-left">
+        <a href="./index.html"><img src="./img/logo.png" alt="logo png" width="125px"></a>
         <a href="./products/index.html">Product</a>
         <a href="./about.html">About</a>
         <a href="./blog/index.html">Blog</a>
       </div>
       <div class="app-middle">
-        <a href="./index.html"><img src="./img/logo.png" alt="logo png" width="125px"></a>
+        <a href="./index.html"><img src="./img/logo.png" alt="logo png" width="125px" class="mobile"></a>
       </div>
       <div class="app-right">
         <a href="#">
@@ -59,7 +60,7 @@
         <div class="container">
             <p class="keranjang">Keranjang</p>
             <div class="row">
-                <div class="col-lg-8 col-sm-12">
+                <div id="container-items" class="col-lg-8 col-sm-12">
                     <div class="row-head">
                         <div class="row-data">
                             <input type="checkbox" style="margin-right: 10px;">
@@ -68,96 +69,12 @@
                         <div class="row-data web">Kualitas</div>
                         <div class="row-data web">Harga</div>
                     </div>
-                    <div class="row-child">
-                        <div class="row-data">
-                            <input type="checkbox" style="margin-right: 5px;">
-                            <img src="./img/products/03 cream.png" width="55px" alt="" style="margin-right: 10px;">
-                            <span class="web">Red Jelly</span>
-                            <div class="complicated mobile">
-                                <div style="margin-bottom: 10px;">
-                                    <p style="line-height: 15px;">Red Jelly</span>
-                                    <p class="red-color" style="font-size: 20px; line-height: 0px;">Rp. 35.000</span>
-                                </div>
-                                <div>
-                                    <button class="button-cart">-</button>
-                                    <span id="count">0</span>
-                                    <button class="button-cart">+</button>
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="row-data web">
-                            <button class="button-cart">-</button>
-                            <span id="count">0</span>
-                            <button class="button-cart">+</button>
-                        </div>
-                        <div class="row-data web">Rp. 35.000</div>
-                    </div>
-                    <div class="row-child">
-                        <div class="row-data">
-                            <input type="checkbox" style="margin-right: 5px;">
-                            <img src="./img/products/01 serum.png" width="55px" alt="" style="margin-right: 10px;">
-                            <span class="web">Serum Series</span>
-                            <div class="complicated mobile">
-                                <div style="margin-bottom: 10px;">
-                                    <p style="line-height: 15px;">Serum Series</span>
-                                    <p class="red-color" style="font-size: 20px; line-height: 0px;">Rp. 35.000</span>
-                                </div>
-                                <div>
-                                    <button class="button-cart">-</button>
-                                    <span id="count">0</span>
-                                    <button class="button-cart">+</button>
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="row-data web">
-                            <button class="button-cart">-</button>
-                            <span id="count">0</span>
-                            <button class="button-cart">+</button>
-                        </div>
-                        <div class="row-data web">Rp. 35.000</div>
-                    </div>
-                    <div class="row-child">
-                        <div class="row-data">
-                            <input type="checkbox" style="margin-right: 5px;">
-                            <img src="./img/products/02 Spray.png" width="55px" alt="" style="margin-right: 10px;">
-                            <span class="web">Glowing Spray</span>
-                            <div class="complicated mobile">
-                                <div style="margin-bottom: 10px;">
-                                    <p style="line-height: 15px;">Glowing Spray</span>
-                                    <p class="red-color" style="font-size: 20px; line-height: 0px;">Rp. 45.000</span>
-                                </div>
-                                <div>
-                                    <button class="button-cart">-</button>
-                                    <span id="count">0</span>
-                                    <button class="button-cart">+</button>
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="row-data web">
-                            <button class="button-cart">-</button>
-                            <span id="count">0</span>
-                            <button class="button-cart">+</button>
-                        </div>
-                        <div class="row-data web">Rp. 45.000</div>
-                    </div>
+                   
                 </div>
                 <div class="mobile" style="height: 1px; background-color: rgb(145, 141, 141); margin: 30px auto; width: 80%;"></div>
                 <div class="col-lg-4 col-sm-12">
                     <div class="checkout-card">
-                        <p>checkout</p>
-                        <div class="subtotal-cart">
-                            <p>subtotal</p>
-                            <p>Rp. 130.000</p>
-                        </div>
-                        <hr>
-                        <div class="total-cart">
-                            <p><b>Total</b></p>
-                            <p>Rp. 130.000</p>
-                        </div>
-                        <hr>
-                        <a href="./checkout.html">
-                            <button class="primary-button">Lanjut Beli</button>
-                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -190,10 +107,85 @@
         All rights reserved.</p>
     </div>
     <script src="./js/app.js"></script>
+    <script src="./js/cart.js"></script>
     <script>
       if(userToken === null) {
-        history.back()
+            history.back()
       }
+      const containerItems = document.querySelector('#container-items')
+      const checkoutCard = document.querySelector('.checkout-card')
+      if (localStorage.getItem('product-title') && localStorage.getItem('product-price')) {
+        containerItems.innerHTML += `<div class="row-child">
+                        <div class="row-data">
+                            <input type="checkbox" style="margin-right: 5px;">
+                            <img src="${localStorage.getItem('product-img')}" width="55px" alt="" style="margin-right: 10px;">
+                            <span class="web">${localStorage.getItem('product-title')}</span>
+                            <div class="complicated mobile">
+                                <div style="margin-bottom: 10px;">
+                                    <p style="line-height: 15px;">${localStorage.getItem('product-title')}</span>
+                                    <p class="red-color" style="font-size: 20px; line-height: 0px;">${localStorage.getItem('product-price')}</span>
+                                </div>
+                                <div>
+                                    <button class="button-cart" id="button-cart-mobile">-</button>
+                                    <span id="count">1</span>
+                                    <button class="button-cart" id="button-cart-mobile">+</button>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="row-data web">
+                            <button class="button-cart" id="button-cart">-</button>
+                            <span id="count">1</span>
+                            <button class="button-cart" id="button-cart">+</button>
+                        </div>
+                        <div class="row-data web">${localStorage.getItem('product-price')}</div>
+                    </div>`
+
+        checkoutCard.innerHTML += `
+                        <p>checkout</p>
+                        <div class="subtotal-cart">
+                            <p>subtotal</p>
+                            <p>${localStorage.getItem('product-price')}</p>
+                        </div>
+                        <hr>
+                        <div class="total-cart">
+                            <p><b>Total</b></p>
+                            <p>${localStorage.getItem('product-price')}</p>
+                        </div>
+                        <hr>
+                        <a href="./checkout.html">
+                            <button class="primary-button">Lanjut Beli</button>
+                        </a>
+        `
+      }
+
+      const buttonCart = document.querySelectorAll('#button-cart')
+      const buttonCartMobile = document.querySelectorAll('#button-cart-mobile')
+      const count = document.querySelectorAll('#count')
+      let tempCount = 1
+
+      buttonCart.forEach(button => {
+        button.addEventListener('click', () => {
+          if(button.innerText === '+') {
+            tempCount++
+            count.forEach(count => {
+              count.innerText = String(tempCount)
+            })
+          } else if (button.innerText === '-') {
+            tempCount--
+            count.forEach(count => {
+              count.innerText = String(tempCount)
+            })
+          }
+
+          if (tempCount < 0) {
+            tempCount = 0
+            count.forEach(count => {
+              count.innerText = String(tempCount)
+            })
+          }
+
+        })
+      })
     </script>
   </body>
 </html>

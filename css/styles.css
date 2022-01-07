@@ -225,7 +225,7 @@ a, li {
 .serum-img {
     position: absolute;
     max-width: 600px;
-    top: -60px;
+    top: 24px;
     bottom: 0;
     right: 0;
     left: 50%;
@@ -326,9 +326,19 @@ a, li {
 
 .footer-img {
     position: relative;
-    right: 9px;
+    right: 3px;
+    margin-bottom: 12px;
 }
 
+.footer-img:last-child {
+    position: relative;
+    margin-top: 1px;
+    right: 5px !important;
+}
+
+.footer-right > p {
+    margin-bottom: 0px !important;
+}
 .copyright {
     padding-top: 20px;
     padding-left: 20px;
@@ -912,6 +922,7 @@ input[type='checkbox'] {
     z-index: 9;
     top: 85%;
     right: 5%;
+    z-index: 999;
 }
 
 input[type='radio'] {
@@ -940,7 +951,7 @@ input[type='radio'] {
     }
 
     .app-bar, .app-bar-pink {
-        padding: 10px;
+        padding: 10px 24px;
     }
     
     .hero >.title {

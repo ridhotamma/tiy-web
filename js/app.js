@@ -58,3 +58,12 @@ if(userToken === null) {
         history.back()
     })
 }
+
+const footerPayment = document.querySelectorAll('.footer-middle > p')
+const TransferBank = footerPayment[1]
+const eWallet = footerPayment[2]
+
+TransferBank.style.marginBottom = '3px'
+eWallet.style.marginBottom = '0'
+eWallet.style.marginTop = '1px'
+console.log(footerPayment)

@@ -10,12 +10,13 @@
   <body>
     <div class="app-bar-pink" id="appbar">
       <div class="app-left">
+        <a href="./index.html"><img src="./img/logo.png" alt="logo png" width="125px"></a>
         <a href="./products/index.html">Product</a>
         <a href="./about.html">About</a>
         <a href="./blog/index.html">Blog</a>
       </div>
       <div class="app-middle">
-        <a href="./index.html"><img src="./img/logo.png" alt="logo png" width="125px"></a>
+        <a href="./index.html"><img src="./img/logo.png" alt="logo png" width="125px" class="mobile"></a>
       </div>
       <div class="app-right">
         <a href="#">
@@ -156,6 +157,10 @@
           } else {
             alert('Harap Lengkapi semua data')
           }
+
+          emailInputRegister.value = ''
+          passwordInputRegister.value = ''
+          phoneInputRegister.value = ''
       })
 
       formLogin.addEventListener('submit', (e) => {
@@ -176,6 +181,9 @@
           } else {
             alert("User Invalid")
           }
+
+          emailInputLogin.value = ''
+          passwordInputLogin = ''
       })
     </script>
   </body>
